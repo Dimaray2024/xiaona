@@ -1,0 +1,5 @@
+{
+  "name": "小娜老师-5.0",
+  "description": "An AI-powered application to assist elementary and middle school students with their homework. It offers problem analysis without giving direct answers, grades completed assignments, and generates a personalized mistake log with similar practice questions to reinforce learning.",
+  "requestFramePermissions": []
+}

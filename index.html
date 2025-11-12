@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小娜老师</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: false,
+            theme: {
+                extend: {
+                    colors: {
+                        'creamy-yellow': '#FFFBEB',
+                        'sakura-pink': '#FFD6EC',
+                        'mint-green': '#D1FAE5',
+                        'sky-blue': '#E0F2FE',
+                        'soft-text': '#57534E',
+                        'primary': {
+                            DEFAULT: '#FBBF24', // Amber 400
+                            light: '#FCD34D', // Amber 300
+                            dark: '#F59E0B',  // Amber 500
+                        },
+                    },
+                    borderRadius: {
+                        '2xl': '1rem',
+                        '3xl': '1.5rem',
+                        '4xl': '2rem',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 14px 0 rgba(0, 0, 0, 0.05)',
+                        'soft-lg': '0 10px 25px 0 rgba(0, 0, 0, 0.05)',
+                    },
+                    keyframes: {
+                        bounceIn: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0.7' },
+                            '50%': { transform: 'scale(1.05)', opacity: '1' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'bounce-in': 'bounceIn 0.3s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+        body {
+            background-color: #FFFBEB; /* creamy-yellow */
+            color: #57534E; /* soft-text */
+            font-family: 'Noto Sans SC', sans-serif;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color-scheme: light;
+        }
+        
+        h1, h2, h3, h4, .font-display {
+             font-family: 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
+        }
+        
+        /* General Component Styling */
+        .card {
+            background-color: white;
+            border-radius: 1.5rem; /* 3xl */
+            padding: 2rem;
+            box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.05); /* soft shadow */
+        }
+        
+        button {
+            border-radius: 9999px; /* full */
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+        }
+        button:hover:not(:disabled) {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 4px 12px 0 rgba(0,0,0,0.1);
+        }
+        button:active:not(:disabled) {
+            transform: translateY(0px) scale(0.98);
+        }
+        button.primary {
+            background-color: #FBBF24; /* primary */
+            color: #57534E;
+        }
+         button.secondary {
+            background-color: #E0F2FE; /* sky-blue */
+            color: #0369A1; /* sky-700 */
+        }
+        button:disabled {
+            background-color: #E7E5E4; /* stone-200 */
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #F5F5F4; /* neutral-200 */
+            border-radius: 0.75rem; /* xl */
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background-color: #FFFFFF;
+            color: #57534E;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #FCD34D; /* primary-light */
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0"
+      }
+    }
+    </script>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
